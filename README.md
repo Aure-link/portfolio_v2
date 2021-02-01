@@ -19,6 +19,6 @@ $ npm run generate
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
-#Développement de mon portfolio
+# Développement de mon portfolio
 
 Avec Nuxt.js
