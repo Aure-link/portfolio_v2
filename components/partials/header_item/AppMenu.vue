@@ -3,16 +3,16 @@
     <div v-show="visible" class="top-menu">
       <ul>
         <li>
-          <span v-on:click="scrollToElement" class="top-menu-link">About</span>
+          <span v-on:click="scrollTo('about')" class="top-menu-link">About</span>
         </li>
         <li>
-          <span v-on:click="scrollToElement" class="top-menu-link">What I do</span>
+          <span v-on:click="scrollTo('skills')" class="top-menu-link">What I do</span>
         </li>
         <li>
-          <span v-on:click="scrollToElement" class="top-menu-link">Works</span>
+          <span v-on:click="scrollTo('works')" class="top-menu-link">Works</span>
         </li>
         <li>
-          <span v-on:click="scrollToElement" class="top-menu-link">Contact</span>
+          <span v-on:click="scrollTo('contact')" class="top-menu-link">Contact</span>
         </li>
       </ul>
     </div>
@@ -38,12 +38,12 @@ export default {
     scrollListener: function (e) {
       this.visible = window.scrollY > 50;
     },
-    scrollToElement() {
-      const el = document.getElementsByClassName("about-section")[0];
+    scrollTo(anchor) {
+      const el = document.getElementsByClassName(anchor + '-section')[0];
       if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
+        el.scrollIntoView({block: "start", behavior: "smooth" });
       }
-    },
+    }
   },
   mounted: function () {
     window.addEventListener("scroll", this.scrollListener);

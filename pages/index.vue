@@ -2,6 +2,7 @@
 <div class="page-container">
   <slide />
   <about />
+  <skills />
 </div>
 </template>
 

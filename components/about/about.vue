@@ -28,14 +28,18 @@ export default {};
 
 <style lang="scss">
 .about-section {
-  margin: 120px 0;
+  padding-top: 120px;
+  margin: 0 0 120px 0;
   .container {
     display: flex;
     justify-content: space-between;
     .about-picture {
       width: 35%;
+      max-height: 450px;
       img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
     .about-content {
