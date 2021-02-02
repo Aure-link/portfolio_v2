@@ -45,6 +45,7 @@ export default {
   left: 0;
   width: 100%;
   transition: 0.3s;
+  z-index: 1;
   &::before {
     content: '';
     position: absolute;

@@ -12,11 +12,11 @@ export default {};
 .header {
   .logo {
     a {
-      font-style: italic;
-      font-weight: 600;
+      font-family: 'Lobster';
       font-size: 35px;
       color: #fff;
       transition: 0.3s;
+      text-transform: initial;
       &.scroll {
         color: #292929;
       }
