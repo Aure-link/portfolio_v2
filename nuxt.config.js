@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'portfolio_v2',
+    title: 'Aurélien GUILLIET ',
     htmlAttrs: {
       lang: 'en'
     },
@@ -15,17 +15,28 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {
+        type: "module",
+        src: "https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"
+      },
+      {
+        nomodule: "",
+        src: "https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"
+      }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    '@/assets/reset',
+    '@/assets/main'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/element-ui'
+    '~/plugins/global.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -41,6 +52,5 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: [/^element-ui/],
   }
 }

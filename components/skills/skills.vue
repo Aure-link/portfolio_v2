@@ -1,8 +1,5 @@
 <template>
-<div class="page-container">
-  <slide />
-  <about />
-</div>
+  
 </template>
 
 <script>
