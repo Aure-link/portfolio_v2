@@ -3,16 +3,16 @@
     <div v-show="visible" class="top-menu">
       <ul>
         <li>
-          <a class="top-menu-link" href="#about-section">About</a>
+          <span v-on:click="scrollToElement" class="top-menu-link">About</span>
         </li>
         <li>
-          <a class="top-menu-link" href="#services-section">What I do</a>
+          <span v-on:click="scrollToElement" class="top-menu-link">What I do</span>
         </li>
         <li>
-          <a class="top-menu-link" href="#works-section">Works</a>
+          <span v-on:click="scrollToElement" class="top-menu-link">Works</span>
         </li>
         <li>
-          <a class="top-menu-link" href="#contact-section">Contact</a>
+          <span v-on:click="scrollToElement" class="top-menu-link">Contact</span>
         </li>
       </ul>
     </div>
@@ -37,6 +37,12 @@ export default {
     },
     scrollListener: function (e) {
       this.visible = window.scrollY > 50;
+    },
+    scrollToElement() {
+      const el = document.getElementsByClassName("about-section")[0];
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
     },
   },
   mounted: function () {
@@ -63,14 +69,17 @@ export default {
     li {
       padding: 10px 20px;
       .top-menu-link {
-        font-weight: 600;
-        font-size: 16px;
+        font-weight: 500;
+        font-size: 15px;
         position: relative;
         letter-spacing: 3px;
         transition: 0.3s;
         z-index: 1;
+        color: #999999;
+        text-transform: uppercase;
+        cursor: pointer;
         &::before {
-          content: '';
+          content: "";
           position: absolute;
           bottom: 0;
           left: 0;

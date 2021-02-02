@@ -12,9 +12,8 @@
         <div class="about-content-description">
           I have good experience in web site building and customisation. I'm
           also good at html, css, jQuery, Javascript. I'm used to work with
-          front-end framework like vue, with php framework like Symfony and also
-          API. I love to find the best approach to develop the best solution for
-          website developement. <br />
+          front-end framework like Vue.js, with php framework like Symfony and also
+          API. I love to find the best approach to develop website developement. <br />
           Feel free to contact me writing an email with your project idea.
         </div>
         <a class="about-content-resume" href="">download resume</a>
