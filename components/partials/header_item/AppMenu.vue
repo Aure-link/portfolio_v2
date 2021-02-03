@@ -11,9 +11,6 @@
         <li>
           <span v-on:click="scrollTo('works')" class="top-menu-link">Works</span>
         </li>
-        <li>
-          <span v-on:click="scrollTo('contact')" class="top-menu-link">Contact</span>
-        </li>
       </ul>
     </div>
   </transition>
