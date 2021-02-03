@@ -1,7 +1,7 @@
 <template>
-  <div class="skills-section">
+  <div class="skills-section section-grey">
     <div class="container">
-      <div class="skills-section-title">What I Do</div>
+      <div class="skills-section-title section-title">What I Do</div>
       <div class="skills-section-content">
         <div
           v-for="skill in skills"
@@ -37,14 +37,8 @@ export default {
 
 <style lang="scss">
 .skills-section {
-  background-color: #f9f9f9;
   .container {
     padding: 120px 0;
-    .skills-section-title {
-      font-family: "Lobster";
-      font-size: 30px;
-      margin-bottom: 30px;
-    }
     .skills-section-content {
       display: flex;
       justify-content: space-between;
@@ -62,7 +56,7 @@ export default {
         .skills-section-content-item-title {
           margin: 10px 0;
           position: relative;
-          font-size: 13px;
+          font-size: 16px;
           color: #292929;
           letter-spacing: 1px;
           font-weight: 500;
@@ -70,9 +64,11 @@ export default {
         }
         .skills-section-content-item-content {
           margin: 0;
-          font-size: 13px;
+          font-size: 14px;
           line-height: 22px;
+          letter-spacing: 1px;
           color: #999999;
+          font-weight: 300;
         }
       }
     }

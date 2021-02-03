@@ -3,6 +3,8 @@
   <slide />
   <about />
   <skills />
+  <work />
+  <contact />
 </div>
 </template>
 

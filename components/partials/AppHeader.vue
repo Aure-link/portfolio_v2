@@ -59,6 +59,7 @@ export default {
   &.active {
     background-color: white;
     height: 90px;
+    box-shadow: 0 25px 50px rgb(0 0 0 / 5%);
     &::before {
       background: none;
     }
