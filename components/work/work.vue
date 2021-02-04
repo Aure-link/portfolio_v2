@@ -1,5 +1,5 @@
 <template>
-  <div class="works-section">
+  <div class="works-section content-section">
     <div v-on:click="closePopin" v-if="selectedWork" class="popin">
       <div class="popin-content">
         <div v-on:click="closePopin" class="close-popin">
@@ -67,8 +67,8 @@ export default {
 <style lang="scss" scoped>
 .works-section {
   position: relative;
-  .container {
     padding: 120px 0;
+  .container {
     .work-section-items {
       display: flex;
       justify-content: space-between;

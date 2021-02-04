@@ -34,6 +34,9 @@ export default {
     font-size: 100px;
     font-weight: 600;
     letter-spacing: -3px;
+    @media screen and (max-width: 1200px) {
+      font-size: 85px;
+    }
   }
   .scoll_bot {
     position: absolute;

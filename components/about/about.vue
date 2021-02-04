@@ -1,5 +1,5 @@
 <template>
-  <div id="about-section" class="about-section">
+  <div class="about-section content-section">
     <div class="container">
       <div class="about-picture">
         <img src="~/assets/img/personal.jpg" />
@@ -26,7 +26,7 @@
 export default {};
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .about-section {
   padding-top: 120px;
   margin: 0 0 120px 0;
@@ -83,6 +83,16 @@ export default {};
             height: 100%;
           }
         }
+      }
+    }
+    @media screen and (max-width: 750px) {
+      flex-direction: column;
+      .about-picture {
+        width: 100%;
+        max-height: 100%;
+      }
+      .about-content {
+        width: 100%;
       }
     }
   }

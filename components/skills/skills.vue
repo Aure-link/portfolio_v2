@@ -1,5 +1,5 @@
 <template>
-  <div class="skills-section section-grey">
+  <div class="skills-section section-grey content-section">
     <div class="container">
       <div class="skills-section-title section-title">What I Do</div>
       <div class="skills-section-content">
@@ -35,10 +35,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .skills-section {
+  padding: 120px 0;
   .container {
-    padding: 120px 0;
     .skills-section-content {
       display: flex;
       justify-content: space-between;
@@ -71,7 +71,17 @@ export default {
           font-weight: 300;
         }
       }
+      @media screen and (max-width: 750px) {
+        flex-direction: column;
+        .skills-section-content-item {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
     }
+  }
+  @media screen and (max-width: 750px) {
+    padding: 40px 0;
   }
 }
 </style>
