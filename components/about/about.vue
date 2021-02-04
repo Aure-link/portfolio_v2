@@ -30,6 +30,10 @@ export default {};
 .about-section {
   padding-top: 120px;
   margin: 0 0 120px 0;
+  @media screen and (max-width: 750px) {
+    padding-top: 40px;
+    margin-bottom: 40px;
+  }
   .container {
     display: flex;
     justify-content: space-between;
@@ -93,6 +97,9 @@ export default {};
       }
       .about-content {
         width: 100%;
+        .about-content-title {
+          font-size: 35px;
+        }
       }
     }
   }

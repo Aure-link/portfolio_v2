@@ -1,32 +1,36 @@
 <template>
   <div class="logo">
-    <NuxtLink to="/">Aurélien</NuxtLink>
+    <span v-on:click="scrollTo('slide')" class="logo">Aurélien</span>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    scrollTo(anchor) {
+    const el = document.getElementsByClassName(anchor + '-section')[0];
+    console.log(el)
+    if (el) {
+      el.scrollIntoView({block: "start", behavior: "smooth" });
+    }
+  }
+  }
+};
 </script>
 
 <style lang="scss">
 .header {
   .logo {
-    a {
       font-family: 'Lobster';
       font-size: 35px;
       color: #fff;
       transition: 0.3s;
       text-transform: initial;
-      &.scroll {
-        color: #292929;
-      }
-    }
+      cursor: pointer;
   }
   &.active {
     .logo {
-      a {
         color: #292929;
-      }
     }
   }
 }

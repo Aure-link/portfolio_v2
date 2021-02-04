@@ -1,5 +1,5 @@
 <template>
-  <div class="slide">
+  <div class="slide-section slide">
     <div class="main-title">Developeur & UX Designer</div>
     <div v-on:click="scrollToElement" class="scoll_bot">
       <ion-icon name="chevron-down-outline" class="icon"></ion-icon>

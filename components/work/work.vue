@@ -8,7 +8,7 @@
         <img
           class="popin-img"
           :src="require(`~/assets/img/works/${selectedWork.img}.png`)"
-        />
+        /> 
         <div class="popin-desc">
           <div class="popin-tag">
             {{selectedWork.tag}}
@@ -51,6 +51,7 @@ export default {
       works,
       visible: false,
       selectedWork: undefined,
+      static: undefined
     };
   },
   methods: {
@@ -60,7 +61,7 @@ export default {
     closePopin() {
       this.selectedWork = undefined;
     },
-  },
+  }
 };
 </script>
 
@@ -99,6 +100,7 @@ export default {
           width: 100%;
           height: 280px;
           margin: 10px 0;
+          border: 1px solid #292929;
           &:hover {
             margin: 10px 0;
             overflow: hidden;
@@ -191,6 +193,17 @@ export default {
             box-shadow: inset 0 -14px 0 #fdd912;  
           }
         }
+      }
+    }
+    @media screen and (max-width: 500px) {
+      height: 98vh;
+      max-height: 98vh; 
+      top: 50%;
+      transform: translate(0, -50%);
+      .popin-content {
+        height: 100%;
+        width: 100%;
+        overflow: scroll; 
       }
     }
   }
