@@ -1,6 +1,11 @@
 <template>
+<div class="top-menu-container">
+  <div v-on:click="rightMenu" v-bind:class="{opened : showResponsiveMenu}" v-if="size" class="menu-btn">
+    <ion-icon v-if="!showResponsiveMenu" name="menu"></ion-icon>
+    <ion-icon v-if="showResponsiveMenu" name="close"></ion-icon>
+  </div>
   <transition name="fade">
-    <div v-show="visible" class="top-menu">
+    <div v-if="showResponsiveMenu" v-bind:class="{small : size}" v-show="visible" class="top-menu">
       <ul>
         <li>
           <span v-on:click="scrollTo('about')" class="top-menu-link">About</span>
@@ -14,6 +19,7 @@
       </ul>
     </div>
   </transition>
+</div>
 </template>
 
 <script>
@@ -21,31 +27,62 @@ export default {
   data() {
     return {
       visible: false,
-    };
+      size: true,
+      showResponsiveMenu: true
+    }
+  },
+  created () {
+    window.addEventListener("resize", this.detectSize);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.detectSize);
   },
   methods: {
-    scrollTop: function () {
-      this.intervalId = setInterval(() => {
-        if (window.pageYOffset === 0) {
-          clearInterval(this.intervalId);
-        }
-        window.scroll(0, window.pageYOffset - 50);
-      }, 20);
+    scrollTop() {
+      if ((window.outerWidth) > 750) {
+        this.intervalId = setInterval(() => {
+          if (window.pageYOffset === 0) {
+            clearInterval(this.intervalId);
+          }
+          window.scroll(0, window.pageYOffset - 50);
+        }, 20);
+      } else {
+        this.visible = true
+      }
     },
-    scrollListener: function (e) {
-      this.visible = window.scrollY > 50;
+    scrollListener(e) {
+      if ((window.outerWidth) > 750) {
+        this.visible = window.scrollY > 50;
+      } else {
+        this.visible = true
+      }
     },
     scrollTo(anchor) {
       const el = document.getElementsByClassName(anchor + '-section')[0];
       if (el) {
         el.scrollIntoView({block: "start", behavior: "smooth" });
       }
+    },
+    detectSize() {
+      if ((window.outerWidth) <= 750) {
+        this.size = true
+        this.showResponsiveMenu = false
+      }
+      else {
+        this.size = false
+        this.showResponsiveMenu = true
+      }
+    },
+    rightMenu() {
+      this.showResponsiveMenu = !this.showResponsiveMenu
     }
   },
-  mounted: function () {
+  mounted() {
     window.addEventListener("scroll", this.scrollListener);
+    this.detectSize(function() {})
+    this.scrollListener(function() {})
   },
-  beforeDestroy: function () {
+  beforeDestroy() {
     window.removeEventListener("scroll", this.scrollListener);
   },
 };
@@ -58,6 +95,28 @@ export default {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+.menu-btn {
+  width: 35px;
+  height: 35px;
+  color: #fff;
+  z-index: 1;
+  font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &.opened {
+    color: #000;
+  }
+}
+.header {
+  &.active {
+    .menu-btn {
+      color: #000;
+    }
+  }
 }
 .top-menu {
   ul {
@@ -91,6 +150,25 @@ export default {
           &::before {
             height: 50%;
           }
+        }
+      }
+    }
+  }
+  &.small {
+    padding: 50px 30px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 230px;
+    height: 100%;
+    background: #ffffff;
+    ul {
+      flex-direction: column;
+      align-items: flex-start;
+      li {
+        padding: 15px 0;
+        .top-menu-link {
+          color: #292929;
         }
       }
     }

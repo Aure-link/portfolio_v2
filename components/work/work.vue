@@ -68,6 +68,9 @@ export default {
 .works-section {
   position: relative;
     padding: 120px 0;
+    @media screen and (max-width: 750px) {
+      padding: 40px 0;
+    }
   .container {
     .work-section-items {
       display: flex;
@@ -87,6 +90,20 @@ export default {
           height: 100%;
           object-fit: cover;
           object-position: top;
+        }
+      }
+      @media screen and (max-width: 750px) {
+        flex-direction: column;
+        align-items: center;
+        .work-section-items-item {
+          width: 100%;
+          height: 280px;
+          margin: 10px 0;
+          &:hover {
+            margin: 10px 0;
+            overflow: hidden;
+            box-shadow: initial;
+          }
         }
       }
     }

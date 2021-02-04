@@ -2,7 +2,6 @@
   <div v-bind:class="{ active: visible }" class="header">
     <div class="container">
       <logo />
-      <menu-btn />
       <app-menu />
     </div>
   </div>
@@ -16,7 +15,7 @@ export default {
     };
   },
   methods: {
-    scrollTop: function () {
+    scrollTop() {
       this.intervalId = setInterval(() => {
         if (window.pageYOffset === 0) {
           clearInterval(this.intervalId);
@@ -24,14 +23,14 @@ export default {
         window.scroll(0, window.pageYOffset - 50);
       }, 20);
     },
-    scrollListener: function (e) {
+    scrollListener(e) {
       this.visible = window.scrollY > 50;
     },
   },
-  mounted: function () {
+  mounted() {
     window.addEventListener("scroll", this.scrollListener);
   },
-  beforeDestroy: function () {
+  beforeDestroy() {
     window.removeEventListener("scroll", this.scrollListener);
   },
 };

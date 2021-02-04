@@ -36,6 +36,11 @@ export default {
     letter-spacing: -3px;
     @media screen and (max-width: 1200px) {
       font-size: 85px;
+      text-align: center;
+    }
+    @media screen and (max-width: 750px) {
+      font-size: 50px;
+      letter-spacing: initial;
     }
   }
   .scoll_bot {
