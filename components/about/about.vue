@@ -16,7 +16,7 @@
           API. I love to find the best approach to develop website developement. <br />
           Feel free to contact me writing an email with your project idea.
         </div>
-        <a class="about-content-resume" href="">download resume</a>
+        <a class="about-content-resume" href="/cv.pdf" target="_blank">download resume</a>
       </div>
     </div>
   </div>
