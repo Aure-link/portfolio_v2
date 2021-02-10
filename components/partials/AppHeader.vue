@@ -4,6 +4,7 @@
       <logo />
       <app-menu />
     </div>
+    <div class="progress"></div>
   </div>
 </template>
 
@@ -26,9 +27,18 @@ export default {
     scrollListener(e) {
       this.visible = window.scrollY > 50;
     },
+    progress() {
+      let pageHeight = document.documentElement.scrollHeight - window.innerHeight
+      let position = window.scrollY
+      let pageWidth = document.documentElement.clientWidth
+      let progressWidth = position / pageHeight * pageWidth
+
+      document.querySelector('.progress').style.width = progressWidth+"px"
+    }
   },
   mounted() {
     window.addEventListener("scroll", this.scrollListener);
+    window.addEventListener("scroll", this.progress);
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.scrollListener);
@@ -68,6 +78,14 @@ export default {
     align-items: center;
     justify-content: space-between;
     height: 100%;
+  }
+  .progress {
+    background-color: #fdd914;
+    height: 3px;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    left: 0;
   }
 }
 </style>
