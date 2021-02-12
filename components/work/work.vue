@@ -19,13 +19,13 @@
           <p class="popin-paragraph">
             {{ selectedWork.resume }}
           </p>
-          <a v-if="selectedWork.link" v-bind:href="selectedWork.link" class="popin-link" target="_blank">view project</a>
-          <span v-else v-bind:href="selectedWork.link" class="popin-link" target="_blank">no project yet</span>
+          <a v-if="selectedWork.link" v-bind:href="selectedWork.link" class="popin-link" target="_blank">{{ selectedWork.linkText }}</a>
+          <span v-else v-bind:href="selectedWork.link" class="popin-link" target="_blank">{{ selectedWork.noLinkText }}</span> 
         </div>
       </div>
     </div>
     <div class="container">
-      <div class="work-section-title section-title">Recent Works</div>
+      <div class="work-section-title section-title">{{ $t('works.title') }}</div>
       <div class="work-section-items">
         <div
           v-for="work in works"
@@ -44,15 +44,18 @@
 </template>
 
 <script>
-import { works } from "../../content/works.js";
 export default {
   data() {
     return {
-      works,
       visible: false,
       selectedWork: undefined,
       static: undefined
     };
+  },
+  computed: {
+    works(){
+      return this.$t('works.item')
+    }
   },
   methods: {
     popIn(work) {
@@ -69,7 +72,7 @@ export default {
 .works-section {
   position: relative;
     padding: 120px 0;
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 800px) {
       padding: 40px 0;
     }
   .container {
@@ -93,7 +96,7 @@ export default {
           object-position: top;
         }
       }
-      @media screen and (max-width: 750px) {
+      @media screen and (max-width: 800px) {
         flex-direction: column;
         align-items: center;
         .work-section-items-item {

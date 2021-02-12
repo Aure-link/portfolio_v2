@@ -1,6 +1,6 @@
 <template>
   <div class="slide-section slide">
-    <div class="main-title">Developeur & UX Designer</div>
+    <div class="main-title">{{ $t('slide.title') }}</div>
     <div v-on:click="scrollToElement" class="scoll_bot">
       <ion-icon name="chevron-down-outline" class="icon"></ion-icon>
     </div>
@@ -20,7 +20,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .slide {
   background-image: url("~assets/img/slide-bg.jpg");
   background-size: cover;
@@ -38,7 +38,7 @@ export default {
       font-size: 85px;
       text-align: center;
     }
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 800px) {
       font-size: 50px;
       letter-spacing: initial;
     }

@@ -49,10 +49,28 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/robots',
+    'nuxt-i18n',
   ],
   robots: {
     UserAgent: '*',
     Disallow: '/'
+  },
+  i18n: {
+    defaultLocale: 'en',
+    locales: [
+      {
+        code: 'en',
+        file: 'en.js',
+        name: 'English'
+      },
+      {
+        code: 'fr',
+        file: 'fr.js',
+        name: 'Français'
+      }
+    ],
+    lazy: 'true',
+    langDir: 'lang/'
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

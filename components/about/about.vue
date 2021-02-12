@@ -6,17 +6,12 @@
       </div>
       <div class="about-content">
         <h1 class="about-content-title">
-          I'm Aurélien Guilliet, front-end Developer and UX Designer from
-          France.
+          {{ $t('about.title') }}
         </h1>
         <div class="about-content-description">
-          I have good experience in web site building and customisation. I'm
-          also good at html, css, jQuery, Javascript. I'm used to work with
-          front-end framework like Vue.js, with php framework like Symfony and also
-          API. I love to find the best approach to develop website developement. <br />
-          Feel free to contact me writing an email with your project idea.
+          {{ $t('about.text') }}
         </div>
-        <a class="about-content-resume" href="/cv.pdf" target="_blank">download resume</a>
+        <a class="about-content-resume" href="/cv.pdf" target="_blank">{{ $t('about.link') }}</a>
       </div>
     </div>
   </div>
@@ -30,7 +25,7 @@ export default {};
 .about-section {
   padding-top: 120px;
   margin: 0 0 120px 0;
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 800px) {
     padding-top: 40px;
     margin-bottom: 40px;
   }
@@ -89,7 +84,7 @@ export default {};
         }
       }
     }
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 800px) {
       flex-direction: column;
       .about-picture {
         width: 100%;

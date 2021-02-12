@@ -1,7 +1,7 @@
 <template>
   <div class="section-footer section-grey">
     <div class="copyright">
-      &copy; {{ new Date().getFullYear() }} Aurélien. all rights reserved.
+      &copy; {{ new Date().getFullYear() }} Aurélien. {{ $t("footer.copyright") }}
     </div>
   </div>
 </template>
@@ -19,7 +19,7 @@ export default {};
     padding: 120px 0;
     font-size: 15px;
     color: #898989;
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 800px) {
       padding: 40px 0;
     }
   }

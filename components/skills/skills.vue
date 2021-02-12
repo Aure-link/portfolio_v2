@@ -1,7 +1,7 @@
 <template>
   <div class="skills-section section-grey content-section">
     <div class="container">
-      <div class="skills-section-title section-title">What I Do</div>
+      <div class="skills-section-title section-title">{{ $t('skills.title') }}</div>
       <div class="skills-section-content">
         <div
           v-for="skill in skills"
@@ -25,13 +25,16 @@
 </template>
 
 <script>
-import { skills } from "../../content/skills.js";
 export default {
   data() {
     return {
-      skills,
-    };
+    }
   },
+  computed: {
+    skills() {
+      return this.$t('skills.item')
+    }
+  }
 };
 </script>
 
@@ -71,7 +74,7 @@ export default {
           font-weight: 300;
         }
       }
-      @media screen and (max-width: 750px) {
+      @media screen and (max-width: 800px) {
         flex-direction: column;
         .skills-section-content-item {
           width: 100%;
@@ -80,7 +83,7 @@ export default {
       }
     }
   }
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 800px) {
     padding: 40px 0;
   }
 }
