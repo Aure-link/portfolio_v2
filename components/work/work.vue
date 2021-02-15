@@ -60,9 +60,11 @@ export default {
   methods: {
     popIn(work) {
       this.selectedWork = work;
+      document.querySelector("body").classList.add('locked')
     },
     closePopin() {
       this.selectedWork = undefined;
+      document.querySelector("body").classList.remove('locked')
     },
   }
 };
@@ -79,15 +81,21 @@ export default {
     .work-section-items {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       .work-section-items-item {
         max-height: 280px;
+        height: 280px;
         width: 30%;
         transition: 0.3s;
         cursor: pointer;
+        margin-bottom: 30px;
+        box-sizing: border-box;
+          border: 2px solid transparent;
         &:hover {
-          margin-top: -15px;
-          margin-bottom: 15px;
-          box-shadow: 0 10px 45px rgba(0, 0, 0, 0.15);
+          border: 2px solid #fdd914;
+        }
+        &:last-child {
+          margin-bottom: 0;
         }
         .work-section-items-item-img {
           width: 100%;
@@ -115,24 +123,25 @@ export default {
   }
   .popin {
     position: fixed;
+    top: 50%;
+    left: 50%;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
     z-index: 2;
-    background-color: rgba(255, 255, 255, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 25px 50px rgb(0 0 0 / 5%);
     .popin-content {
       background-color: #fff;
       width: 620px;
-      margin: 30px auto;
       position: relative;
       box-shadow: 0 25px 50px rgb(0 0 0 / 5%);
       padding: 10px;
       z-index: 3;
       border-radius: 10px;
+      height: 80%;
       .close-popin {
         position: absolute;
         top: 0;
@@ -198,15 +207,15 @@ export default {
         }
       }
     }
-    @media screen and (max-width: 500px) {
-      height: 98vh;
-      max-height: 98vh; 
-      top: 50%;
-      transform: translate(0, -50%);
+    @media screen and (max-width: 1200px) {
       .popin-content {
-        height: 100%;
-        width: 100%;
-        overflow: scroll; 
+        overflow-y: scroll;
+      }
+    }
+    @media screen and (max-width: 800px) {
+      .popin-content {
+        height: 90vh;
+        width: 90vw;
       }
     }
   }

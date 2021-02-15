@@ -43,6 +43,20 @@ html {
     font-family: 'Fira Sans';
     font-weight: 500;
     color: #292929;
+    &.locked {
+      height: 100%;
+      overflow: hidden;
+      &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.6);
+        position: fixed;
+        z-index: 1;
+      }
+    }
   }
 }
 .container {

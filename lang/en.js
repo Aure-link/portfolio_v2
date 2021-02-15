@@ -88,7 +88,20 @@ export default {
         date: "04/2018 - 09/2018",
         linkText: "View project",
         noLinkText: "No project yet",
-    }
+    },
+    {
+      id: 4,
+      smallTitle: "Portfolio",
+      tag: "Front-end",
+      title: "Building my portfolio",
+      resume: "Building my portfolio with Vue.js, Nuxt.js and gituhub for the versionning part. ",
+      link: "https://aurelienguilliet.fr/",
+      img: "portfolio",
+      alt: "image des maquettes smartfone",
+      date: "01/2021 - 02/2021",
+      linkText: "Voir le projet",
+      noLinkText: "Pas encore de projet",
+  }
     ]
   },
   footer: {
