@@ -99,8 +99,8 @@ export default {
       img: "portfolio",
       alt: "image des maquettes smartfone",
       date: "01/2021 - 02/2021",
-      linkText: "Voir le projet",
-      noLinkText: "Pas encore de projet",
+      linkText: "View project",
+      noLinkText: "No project yet",
   }
     ]
   },
