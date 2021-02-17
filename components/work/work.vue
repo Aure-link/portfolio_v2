@@ -37,6 +37,9 @@
             class="work-section-items-item-img"
             :src="require(`~/assets/img/works/${work.img}.png`)"
           />
+          <div class="work-section-items-item-tag-info">
+            {{work.tag}}
+          </div>
         </div>
       </div>
     </div>
@@ -90,9 +93,31 @@ export default {
         cursor: pointer;
         margin-bottom: 30px;
         box-sizing: border-box;
-          border: 2px solid transparent;
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          opacity: 0;
+          background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+          transition: opacity 0.35s, transform 0.35s;
+          transform: translate3d(0, 50%, 0);
+        }
         &:hover {
-          border: 2px solid #fdd914;
+          &::before {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+            transition: opacity 0.35s, transform 0.35s;
+          }
+          .work-section-items-item-tag-info {
+            opacity: 1;
+            transform: translate3d(0,0,0);
+          }
         }
         &:last-child {
           margin-bottom: 0;
@@ -103,20 +128,50 @@ export default {
           object-fit: cover;
           object-position: top;
         }
+        .work-section-items-item-tag-info {
+          color: #fff;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-size: 15px;
+          opacity: 0;
+          transform: translate3d(0,10px,0);
+          transition: opacity 0.35s, transform 0.35s;
+          position: absolute;
+          width: 100%;
+          left: 0;
+          text-align: center;
+          bottom: 0;
+          padding: 30px;
+          box-sizing: border-box;
+        }
       }
       @media screen and (max-width: 800px) {
-        flex-direction: column;
         align-items: center;
         .work-section-items-item {
-          width: 100%;
+          width: 48%;
           height: 280px;
           margin: 10px 0;
           border: 1px solid #292929;
-          &:hover {
+          &:last-child {
             margin: 10px 0;
-            overflow: hidden;
-            box-shadow: initial;
           }
+          &:before {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+            transition: opacity 0.35s, transform 0.35s;
+            height: 50%;
+            top: 50%;
+          }
+          .work-section-items-item-tag-info {
+            opacity: 1;
+            transform: translate3d(0,0,0);
+          }
+        }
+      }
+      @media screen and (max-width: 550px) {
+        flex-direction: column;
+        .work-section-items-item {
+          width: 100%;
         }
       }
     }
@@ -137,7 +192,7 @@ export default {
       background-color: #fff;
       width: 620px;
       position: relative;
-      box-shadow: 0 25px 50px rgb(0 0 0 / 5%);
+      box-shadow: 0 25px 50px rgb(0 0 0 / 15%);
       padding: 10px;
       z-index: 3;
       border-radius: 10px;
@@ -154,9 +209,18 @@ export default {
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        border-bottom: 2px solid #fdd914;
+        border-left: 2px solid #fdd914;
+        transition: 0.3s;
+        &:hover {
+          .close-icon {
+              transform: rotate(90deg);
+          }
+        }
         .close-icon {
           font-size: 30px;
           color: #333;
+          transition: 0.3s;;
         }
       }
       .popin-img {
