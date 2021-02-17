@@ -30,7 +30,7 @@ export default {
   justify-content: center;
   align-items: center;
   .main-title {
-    color: #fff;
+    color: $white;
     font-size: 100px;
     font-weight: 600;
     letter-spacing: -3px;
@@ -55,7 +55,7 @@ export default {
     animation: jiggle 1s infinite;
     .icon {
       font-size: 45px;
-      color: #fff;
+      color: $white;
     }
   }
   @keyframes jiggle {

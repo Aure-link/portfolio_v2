@@ -31,7 +31,8 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/reset',
-    '@/assets/main'
+    '@/assets/main',
+    '~assets/scss/colors'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -49,11 +50,15 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/robots',
+    '@nuxtjs/style-resources',
     'nuxt-i18n',
   ],
   robots: {
     UserAgent: '*',
     Disallow: '/'
+  },
+  styleResources: {
+    scss: ['./assets/scss/*.scss']
   },
   i18n: {
     defaultLocale: 'en',

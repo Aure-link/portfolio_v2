@@ -142,7 +142,7 @@ export default {
 .menu-btn {
   width: 35px;
   height: 35px;
-  color: #fff;
+  color: $white;
   z-index: 11;
   font-size: 30px;
   cursor: pointer;
@@ -174,7 +174,7 @@ export default {
         letter-spacing: 3px;
         transition: 0.3s;
         z-index: 1;
-        color: #999999;
+        color: $grey-2;
         text-transform: uppercase;
         cursor: pointer;
         &::before {
@@ -182,14 +182,14 @@ export default {
           position: absolute;
           bottom: 0;
           left: 0;
-          background-color: #fdd914;
+          background-color: $yellow;
           height: 0;
           width: 100%;
           z-index: -1;
           transition: 0.3s;
         }
         &:hover {
-          color: #292929;
+          color: $black;
           &::before {
             height: 50%;
           }
@@ -203,7 +203,7 @@ export default {
     .actual_local {
       display: flex;
       align-items: center;
-      color: #999999;
+      color: $grey-2;
       cursor: pointer;
       .lang_icon {
         width: 20px;
@@ -224,9 +224,9 @@ export default {
       }
     }
     .allLocales {
-      background-color: #fff;
+      background-color: $white;
       position: absolute;
-      border: 1px solid #292929;
+      border: 1px solid $black;
       top: 100%;
       margin-top: 10px;
       right: -20px;
@@ -241,12 +241,12 @@ export default {
         right: 10%;
         border-style: solid;
         border-width: 0 10px 10px 10px;
-        border-color: transparent transparent #292929 transparent;
+        border-color: transparent transparent $black transparent;
         z-index: 1;
       }
       &::before {
         transform: translate(0, -90%);
-        border-color: transparent transparent #fff transparent;
+        border-color: transparent transparent $white transparent;
         z-index: 2;
       }
       .lang_link {
@@ -256,7 +256,7 @@ export default {
         height: 30px;
         box-sizing: border-box;
         padding: 20px;
-        color: #292929;
+        color: $black;
         text-transform: inherit;
         transition: 0.3s;
         .lang_icon {
@@ -264,7 +264,7 @@ export default {
           margin-right: 5px;
         }
         &:hover {
-          background-color: #f9f9f9;
+          background-color: $grey-1;
         }
       }
       @media screen and (max-width: 800px) {
@@ -278,7 +278,7 @@ export default {
         .lang_link {
           padding-left: 0;
           &:first-child {
-            border-top: 1px solid #999999;
+            border-top: 1px solid $grey-2;
           }
         }
       }
@@ -291,7 +291,7 @@ export default {
     right: 0;
     width: 230px;
     height: 100%;
-    background: #ffffff;
+    background: $white;
     z-index: 10;
     ul {
       flex-direction: column;
@@ -299,7 +299,7 @@ export default {
       li {
         padding: 15px 0;
         .top-menu-link {
-          color: #292929;
+          color: $black;
         }
       }
     }

@@ -23,14 +23,14 @@ export default {
   .logo {
       font-family: 'Lobster';
       font-size: 35px;
-      color: #fff;
+      color: $white;
       transition: 0.3s;
       text-transform: initial;
       cursor: pointer;
   }
   &.active {
     .logo {
-        color: #292929;
+        color: $black;
     }
   }
 }

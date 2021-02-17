@@ -48,18 +48,18 @@ export default {};
         margin: 25px 0;
         font-size: 45px;
         line-height: 55px;
-        color: #292929;
+        color: $black;
       }
       .about-content-description {
         margin: 25px 0;
         padding: 0;
         font-size: 16px;
-        color: #999999;
+        color: $grey-2;
         line-height: 28px;
       }
       .about-content-resume {
         font-size: 15px;
-        color: #292929;
+        color: $black;
         letter-spacing: 1px;
         line-height: 12px;
         text-transform: uppercase;
@@ -71,7 +71,7 @@ export default {};
           position: absolute;
           bottom: 0;
           left: 0;
-          background-color: #fdd914;
+          background-color: $yellow;
           height: 50%;
           width: 100%;
           z-index: -1;

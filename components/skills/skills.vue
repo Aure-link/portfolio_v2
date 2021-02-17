@@ -60,7 +60,7 @@ export default {
           margin: 10px 0;
           position: relative;
           font-size: 16px;
-          color: #292929;
+          color: $black;
           letter-spacing: 1px;
           font-weight: 500;
           text-transform: uppercase;
@@ -70,7 +70,7 @@ export default {
           font-size: 14px;
           line-height: 22px;
           letter-spacing: 1px;
-          color: #999999;
+          color: $grey-2;
           font-weight: 300;
         }
       }

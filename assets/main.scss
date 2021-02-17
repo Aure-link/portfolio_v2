@@ -1,48 +1,10 @@
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('~assets/fonts/Fira_sans/FiraSans-Light.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('~assets/fonts/Fira_sans/FiraSans-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('~assets/fonts/Fira_sans/FiraSans-Medium.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-  src: url('~assets/fonts/Fira_sans/FiraSans-MediumItalic.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Lobster';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('~assets/fonts/Lobster_Two/LobsterTwo-Italic.ttf') format('truetype');
-}
+@use 'fontface';
 
 html {
   body {
     font-family: 'Fira Sans';
     font-weight: 500;
-    color: #292929;
+    color: $black;
     &.locked {
       height: 100%;
       overflow: hidden;
@@ -69,7 +31,7 @@ html {
   }
 }
 a {
-    color: #999999;
+    color: $grey-2;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -82,5 +44,5 @@ a {
   }
 }
 .section-grey {
-  background-color: #f9f9f9;
+  background-color: $grey-1;
 }

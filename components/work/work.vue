@@ -129,7 +129,7 @@ export default {
           object-position: top;
         }
         .work-section-items-item-tag-info {
-          color: #fff;
+          color: $white;
           letter-spacing: 1px;
           text-transform: uppercase;
           font-size: 15px;
@@ -151,7 +151,7 @@ export default {
           width: 48%;
           height: 280px;
           margin: 10px 0;
-          border: 1px solid #292929;
+          border: 1px solid $black;
           &:last-child {
             margin: 10px 0;
           }
@@ -189,7 +189,7 @@ export default {
     transform: translate(-50%, -50%);
     box-shadow: 0 25px 50px rgb(0 0 0 / 5%);
     .popin-content {
-      background-color: #fff;
+      background-color: $white;
       width: 620px;
       position: relative;
       box-shadow: 0 25px 50px rgb(0 0 0 / 15%);
@@ -203,14 +203,14 @@ export default {
         right: 0;
         width: 50px;
         height: 50px;
-        background-color: #fff;
+        background-color: $white;
         font-size: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        border-bottom: 2px solid #fdd914;
-        border-left: 2px solid #fdd914;
+        border-bottom: 2px solid $yellow;
+        border-left: 2px solid $yellow;
         transition: 0.3s;
         &:hover {
           .close-icon {
@@ -241,14 +241,14 @@ export default {
         }
         .popin-title {
           margin: 0 0 15px 0;
-          color: #292929;
+          color: $black;
           font-size: 26px;
           line-height: 1.4;
         }
         .popin-paragraph {
           padding: 0;
           font-size: 15px;
-          color: #999999;
+          color: $grey-2;
           line-height: 28px;
           font-weight: 300;
           margin-bottom: 30px;
@@ -256,7 +256,7 @@ export default {
         .popin-link {
           padding: 2px 0 0 0;
           font-size: 12px;
-          color: #292929;
+          color: $black;
           letter-spacing: 1px;
           font-weight: 500;
           line-height: 12px;
@@ -265,7 +265,7 @@ export default {
           box-shadow: inset 0 -6px 0 #fdd912;  
           text-transform: uppercase;
           &:hover {
-            color: #292929;
+            color: $black;
             box-shadow: inset 0 -14px 0 #fdd912;  
           }
         }

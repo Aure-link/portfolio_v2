@@ -46,7 +46,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .header {
   height: 105px;
   position: fixed;
@@ -66,7 +66,7 @@ export default {
     transition: 0.3s;
   }
   &.active {
-    background-color: white;
+    background-color: $white;
     height: 90px;
     box-shadow: 0 25px 50px rgb(0 0 0 / 5%);
     &::before {
@@ -80,7 +80,7 @@ export default {
     height: 100%;
   }
   .progress {
-    background-color: #fdd914;
+    background-color: $yellow;
     height: 3px;
     width: 0;
     position: fixed;
