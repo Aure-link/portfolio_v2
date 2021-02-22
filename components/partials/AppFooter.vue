@@ -18,9 +18,17 @@ export default {};
   .copyright {
     padding: 120px 0;
     font-size: 15px;
-    color: #898989;
+    color: $grey-2;
     @media screen and (max-width: 800px) {
       padding: 40px 0;
+    }
+  }
+}
+
+.dark-mode {
+  .section-footer {
+    .copyright {
+      color: $darkgrey-2;
     }
   }
 }

@@ -21,6 +21,12 @@ html {
     }
   }
 }
+.content-section {
+  background-color: $white;
+}
+.dark-mode .content-section {
+  background-color: $darkwhite;
+}
 .container {
   max-width: 1160px;
   margin: 0 auto;
@@ -39,10 +45,17 @@ a {
   font-family: "Lobster";
   font-size: 30px;
   margin-bottom: 50px;
+  color: $black;
   @media screen and (max-width: 800px) {
     margin-bottom: 20px;
   }
 }
+.dark-mode .section-title {
+  color: $darkblack;
+}
 .section-grey {
   background-color: $grey-1;
+}
+.dark-mode .section-grey {
+  background-color: $darkgrey-1;
 }

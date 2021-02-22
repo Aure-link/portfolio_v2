@@ -8,29 +8,38 @@
 export default {
   methods: {
     scrollTo(anchor) {
-    const el = document.getElementsByClassName(anchor + '-section')[0];
-    console.log(el)
-    if (el) {
-      el.scrollIntoView({block: "start", behavior: "smooth" });
-    }
-  }
-  }
+      const el = document.getElementsByClassName(anchor + "-section")[0];
+      console.log(el);
+      if (el) {
+        el.scrollIntoView({ block: "start", behavior: "smooth" });
+      }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 .header {
   .logo {
-      font-family: 'Lobster';
-      font-size: 35px;
-      color: $white;
-      transition: 0.3s;
-      text-transform: initial;
-      cursor: pointer;
+    font-family: "Lobster";
+    font-size: 35px;
+    color: $white;
+    transition: 0.3s;
+    text-transform: initial;
+    cursor: pointer;
   }
   &.active {
     .logo {
-        color: $black;
+      color: $black;
+    }
+  }
+}
+.dark-mode {
+  .header {
+    &.active {
+      .logo {
+        color: $darkblack;
+      }
     }
   }
 }

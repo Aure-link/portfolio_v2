@@ -203,6 +203,8 @@ export default {
         right: 0;
         width: 50px;
         height: 50px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
         background-color: $white;
         font-size: 30px;
         display: flex;
@@ -219,7 +221,7 @@ export default {
         }
         .close-icon {
           font-size: 30px;
-          color: #333;
+          color: $black;
           transition: 0.3s;;
         }
       }
@@ -234,10 +236,10 @@ export default {
         .popin-tag {
           margin: 20px 0 10px 0;
           font-size: 13px;
-          color: #898989;
+          color: $grey-1;
           line-height: 12px;
           display: inline-block;
-          box-shadow: inset 0 -6px 0 #fdd912;
+          box-shadow: inset 0 -6px 0 $yellow;
         }
         .popin-title {
           margin: 0 0 15px 0;
@@ -262,11 +264,11 @@ export default {
           line-height: 12px;
           position: relative;
           transition: 0.3s;
-          box-shadow: inset 0 -6px 0 #fdd912;  
+          box-shadow: inset 0 -6px 0 $yellow;  
           text-transform: uppercase;
           &:hover {
             color: $black;
-            box-shadow: inset 0 -14px 0 #fdd912;  
+            box-shadow: inset 0 -14px 0 $yellow;  
           }
         }
       }
@@ -280,6 +282,41 @@ export default {
       .popin-content {
         height: 90vh;
         width: 90vw;
+      }
+    }
+  }
+}
+.dark-mode {
+  .works-section {
+    .popin {
+      .popin-content {
+        background-color: $darkwhite;
+      }
+      .close-popin {
+        background-color: $darkwhite;
+        border-color: $darkyellow;
+        .close-icon {
+          color: $darkblack;
+        }
+      }
+      .popin-desc {
+        .popin-tag {
+          box-shadow: inset 0 -6px 0 $darkyellow;
+          color: $darkgrey-2;
+        }
+        .popin-title {
+          color: $darkblack;
+        }
+        .popin-paragraph {
+          color: $darkgrey-2;
+        }
+        .popin-link {
+          color: $darkblack;
+          box-shadow: inset 0 -6px 0 $darkyellow;
+          &:hover {
+            box-shadow: inset 0 -14px 0 $darkyellow;
+          }
+        }
       }
     }
   }

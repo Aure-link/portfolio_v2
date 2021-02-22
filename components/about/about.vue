@@ -23,11 +23,9 @@ export default {};
 
 <style lang="scss" scoped>
 .about-section {
-  padding-top: 120px;
-  margin: 0 0 120px 0;
+  padding: 120px 0;
   @media screen and (max-width: 800px) {
-    padding-top: 40px;
-    margin-bottom: 40px;
+    padding: 40px 0;
   }
   .container {
     display: flex;
@@ -66,6 +64,7 @@ export default {};
         cursor: pointer;
         position: relative;
         transition: 0.3s;
+        z-index: 1;
         &::before {
           content: '';
           position: absolute;
@@ -94,6 +93,26 @@ export default {};
         width: 100%;
         .about-content-title {
           font-size: 35px;
+        }
+      }
+    }
+  }
+}
+.dark-mode {
+  .about-section {
+    .container {
+      .about-content {
+        .about-content-title {
+          color: $darkblack;
+        }
+        .about-content-description {
+          color: $darkblack;
+        }
+        .about-content-resume {
+          color: $darkblack;
+          &::before {
+            background-color: $darkyellow;
+          }
         }
       }
     }

@@ -54,7 +54,7 @@ export default {
         .skills-section-content-item-logo {
           font-size: 44px;
           line-height: 48px;
-          color: #fdd912;
+          color: $yellow;
         }
         .skills-section-content-item-title {
           margin: 10px 0;
@@ -75,6 +75,12 @@ export default {
         }
       }
       @media screen and (max-width: 800px) {
+        .skills-section-content-item {
+          width: 48%;
+          max-width: 48%;
+        }
+      }
+      @media screen and (max-width: 550px) {
         flex-direction: column;
         .skills-section-content-item {
           width: 100%;
@@ -85,6 +91,23 @@ export default {
   }
   @media screen and (max-width: 800px) {
     padding: 40px 0;
+  }
+}
+.dark-mode {
+  .container {
+    .skills-section-content {
+      .skills-section-content-item {
+        .skills-section-content-item-logo {
+          color: $darkyellow;
+        }
+        .skills-section-content-item-title {
+          color: $darkblack;
+        }
+        .skills-section-content-item-content {
+          color: $darkgrey-2;
+        }
+      }
+    }
   }
 }
 </style>

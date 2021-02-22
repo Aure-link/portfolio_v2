@@ -88,4 +88,14 @@ export default {
     left: 0;
   }
 }
+.dark-mode {
+  .header {
+    &.active {
+      background-color: $darkwhite;
+    }
+    .progress {
+    background-color: $darkyellow;
+    }
+  }
+}
 </style>

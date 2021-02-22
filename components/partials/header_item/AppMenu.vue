@@ -18,34 +18,56 @@
       >
         <ul>
           <li>
-            <span v-on:click="scrollTo('about')" class="top-menu-link"
-              >{{ $t('menu.about') }}</span
-            >
+            <span v-on:click="scrollTo('about')" class="top-menu-link">{{
+              $t("menu.about")
+            }}</span>
           </li>
           <li>
-            <span v-on:click="scrollTo('skills')" class="top-menu-link"
-              >{{ $t('menu.skills') }}</span
-            >
+            <span v-on:click="scrollTo('skills')" class="top-menu-link">{{
+              $t("menu.skills")
+            }}</span>
           </li>
           <li>
-            <span v-on:click="scrollTo('works')" class="top-menu-link"
-              >{{ $t('menu.works') }}</span
-            >
+            <span v-on:click="scrollTo('works')" class="top-menu-link">{{
+              $t("menu.works")
+            }}</span>
           </li>
-          <li class="lang_selector">
-            <div v-for="locale in availableLocales" v-bind:key="locale.code" v-on:click="openLocales" class="actual_local">
-              <img v-bind:src="require(`~/assets/img/flags/${locale.code}.svg`)" class="lang_icon">
-              <div v-bind:class="{rotate: localVisible}" class="lang_selector-name">
-                {{ locale.name }} 
+          <li class="lang-selector">
+            <div
+              v-for="locale in availableLocales"
+              v-bind:key="locale.code"
+              v-on:click="openLocales"
+              class="actual_local"
+            >
+              <img
+                v-bind:src="require(`~/assets/img/flags/${locale.code}.svg`)"
+                class="lang_icon"
+              />
+              <div
+                v-bind:class="{ rotate: localVisible }"
+                class="lang-selector-name"
+              >
+                {{ locale.name }}
                 <ion-icon class="icon" name="chevron-down-outline"></ion-icon>
-              </div >
+              </div>
             </div>
             <div v-if="localVisible" class="allLocales">
-              <nuxt-link v-for="locale in allLocales" v-bind:key="locale.code" :to="switchLocalePath(locale.code)" class="lang_link">
-                <img v-bind:src="require(`~/assets/img/flags/${locale.code}.svg`)" class="lang_icon">
+              <nuxt-link
+                v-for="locale in allLocales"
+                v-bind:key="locale.code"
+                :to="switchLocalePath(locale.code)"
+                class="lang_link"
+              >
+                <img
+                  v-bind:src="require(`~/assets/img/flags/${locale.code}.svg`)"
+                  class="lang_icon"
+                />
                 {{ locale.name }}
               </nuxt-link>
             </div>
+          </li>
+          <li>
+            <ColorModePicker />
           </li>
         </ul>
       </div>
@@ -60,7 +82,7 @@ export default {
       visible: false,
       size: true,
       showResponsiveMenu: true,
-      localVisible: false
+      localVisible: false,
     };
   },
   created() {
@@ -74,7 +96,7 @@ export default {
       return this.$i18n.locales.filter((i) => i.code == this.$i18n.locale);
     },
     allLocales() {
-      return this.$i18n.locales
+      return this.$i18n.locales;
     },
   },
   methods: {
@@ -93,7 +115,7 @@ export default {
     scrollListener(e) {
       if (window.outerWidth > 800) {
         this.visible = window.scrollY > 50;
-        this.localVisible = false
+        this.localVisible = false;
       } else {
         this.visible = true;
       }
@@ -118,7 +140,7 @@ export default {
     },
     openLocales() {
       this.localVisible = !this.localVisible;
-    }
+    },
   },
   mounted() {
     window.addEventListener("scroll", this.scrollListener);
@@ -136,7 +158,8 @@ export default {
 .fade-leave-active {
   transition: opacity 0.3s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 .menu-btn {
@@ -151,13 +174,13 @@ export default {
   justify-content: center;
   position: relative;
   &.opened {
-    color: #000;
+    color: $black;
   }
 }
 .header {
   &.active {
     .menu-btn {
-      color: #000;
+      color: $black;
     }
   }
 }
@@ -195,7 +218,7 @@ export default {
           }
         }
       }
-      &.lang_selector {
+      &.lang-selector {
         position: relative;
         padding-right: 0;
       }
@@ -209,7 +232,7 @@ export default {
         width: 20px;
         margin-right: 5px;
       }
-      .lang_selector-name {
+      .lang-selector-name {
         display: flex;
         align-items: center;
         .icon {
@@ -220,7 +243,7 @@ export default {
           .icon {
             transform: rotate(180deg);
           }
-          }
+        }
       }
     }
     .allLocales {
@@ -231,8 +254,9 @@ export default {
       margin-top: 10px;
       right: -20px;
       z-index: 10;
-      &::after, &::before {
-        content: '';
+      &::after,
+      &::before {
+        content: "";
         position: absolute;
         transform: translate(0, -100%);
         width: 0;
@@ -272,7 +296,8 @@ export default {
         top: inherit;
         right: inherit;
         border: none;
-        &::before, &::after {
+        &::before,
+        &::after {
           content: none;
         }
         .lang_link {
@@ -291,7 +316,7 @@ export default {
     right: 0;
     width: 230px;
     height: 100%;
-    background: $white;
+    background-color: $white;
     z-index: 10;
     ul {
       flex-direction: column;
@@ -302,6 +327,46 @@ export default {
           color: $black;
         }
       }
+    }
+  }
+}
+.dark-mode {
+  .top-menu {
+    ul {
+      li {
+        .top-menu-link {
+          color: $darkgrey-2;
+          &::before {
+            background-color: $darkyellow;
+          }
+        }
+      }
+      .actual_local {
+        color: $darkgrey-2;
+      }
+      .allLocales {
+        background-color: $darkwhite;
+        .lang_link {
+          color: $darkblack;
+          &:hover {
+            background-color: $darkgrey-1;
+          }
+          .lang_icon {
+            border: 1px solid $darkblack;
+          }
+        }
+      }
+    }
+    &.small {
+      background-color: $darkwhite;
+    }
+  }
+  .header {
+    .menu-btn {
+      color: $darkblack;
+      &.opened {
+          color: $darkblack;
+        }
     }
   }
 }
